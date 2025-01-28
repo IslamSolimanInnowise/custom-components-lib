@@ -7,8 +7,8 @@ describe("Button", () => {
     render(<Button>Default</Button>);
     const buttonElement = screen.getByText("Default");
     expect(buttonElement).toBeInTheDocument();
-    expect(buttonElement).toHaveClass("btn");
-    expect(buttonElement).toHaveClass("contained");
+    expect(buttonElement).toHaveClass("text-white");
+    expect(buttonElement).toHaveClass("bg-blue-600");
   });
 
   //contained button tests
@@ -20,9 +20,8 @@ describe("Button", () => {
     );
     const buttonElement = screen.getByText("Contained");
     expect(buttonElement).toBeInTheDocument();
-    expect(buttonElement).toHaveClass("btn");
-    expect(buttonElement).toHaveClass("contained");
-    expect(buttonElement).toHaveClass("primary");
+    expect(buttonElement).toHaveClass("text-white");
+    expect(buttonElement).toHaveClass("bg-blue-600");
   });
   test("renders button with contained variant and different colors", () => {
     render(
@@ -32,9 +31,8 @@ describe("Button", () => {
     );
     const buttonElement = screen.getByText("Contained");
     expect(buttonElement).toBeInTheDocument();
-    expect(buttonElement).toHaveClass("btn");
-    expect(buttonElement).toHaveClass("contained");
-    expect(buttonElement).toHaveClass("secondary");
+    expect(buttonElement).toHaveClass("text-white");
+    expect(buttonElement).toHaveClass("bg-purple-600");
   });
   test("renders button with contained variant and different colors", () => {
     render(
@@ -44,9 +42,8 @@ describe("Button", () => {
     );
     const buttonElement = screen.getByText("Contained");
     expect(buttonElement).toBeInTheDocument();
-    expect(buttonElement).toHaveClass("btn");
-    expect(buttonElement).toHaveClass("contained");
-    expect(buttonElement).toHaveClass("error");
+    expect(buttonElement).toHaveClass("text-white");
+    expect(buttonElement).toHaveClass("bg-red-600");
   });
 
   //text button tests
@@ -58,9 +55,8 @@ describe("Button", () => {
     );
     const buttonElement = screen.getByText("Text");
     expect(buttonElement).toBeInTheDocument();
-    expect(buttonElement).toHaveClass("btn");
-    expect(buttonElement).toHaveClass("text");
-    expect(buttonElement).toHaveClass("primary");
+    expect(buttonElement).toHaveClass("px-2");
+    expect(buttonElement).toHaveClass("text-blue-600");
   });
   test("renders button with contained variant and different colors", () => {
     render(
@@ -70,9 +66,8 @@ describe("Button", () => {
     );
     const buttonElement = screen.getByText("Text");
     expect(buttonElement).toBeInTheDocument();
-    expect(buttonElement).toHaveClass("btn");
-    expect(buttonElement).toHaveClass("text");
-    expect(buttonElement).toHaveClass("secondary");
+    expect(buttonElement).toHaveClass("px-2");
+    expect(buttonElement).toHaveClass("text-purple-600");
   });
   test("renders button with contained variant and different colors", () => {
     render(
@@ -82,9 +77,8 @@ describe("Button", () => {
     );
     const buttonElement = screen.getByText("Text");
     expect(buttonElement).toBeInTheDocument();
-    expect(buttonElement).toHaveClass("btn");
-    expect(buttonElement).toHaveClass("text");
-    expect(buttonElement).toHaveClass("error");
+    expect(buttonElement).toHaveClass("px-2");
+    expect(buttonElement).toHaveClass("text-red-600");
   });
 
   //outlined button tests
@@ -96,9 +90,8 @@ describe("Button", () => {
     );
     const buttonElement = screen.getByText("Outlined");
     expect(buttonElement).toBeInTheDocument();
-    expect(buttonElement).toHaveClass("btn");
-    expect(buttonElement).toHaveClass("outlined");
-    expect(buttonElement).toHaveClass("primary");
+    expect(buttonElement).toHaveClass("border");
+    expect(buttonElement).toHaveClass("text-blue-600");
   });
   test("renders button with contained variant and different colors", () => {
     render(
@@ -108,9 +101,8 @@ describe("Button", () => {
     );
     const buttonElement = screen.getByText("Outlined");
     expect(buttonElement).toBeInTheDocument();
-    expect(buttonElement).toHaveClass("btn");
-    expect(buttonElement).toHaveClass("outlined");
-    expect(buttonElement).toHaveClass("secondary");
+    expect(buttonElement).toHaveClass("border");
+    expect(buttonElement).toHaveClass("text-purple-600");
   });
   test("renders button with contained variant and different colors", () => {
     render(
@@ -120,8 +112,7 @@ describe("Button", () => {
     );
     const buttonElement = screen.getByText("Outlined");
     expect(buttonElement).toBeInTheDocument();
-    expect(buttonElement).toHaveClass("btn");
-    expect(buttonElement).toHaveClass("outlined");
-    expect(buttonElement).toHaveClass("error");
+    expect(buttonElement).toHaveClass("border");
+    expect(buttonElement).toHaveClass("text-red-600");
   });
 });

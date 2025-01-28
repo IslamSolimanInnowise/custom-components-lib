@@ -1,4 +1,3 @@
-// import classes from "./app.module.css";
 import Button from "./components/Button/Button";
 
 const App: React.FC = () => {

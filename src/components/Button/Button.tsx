@@ -1,7 +1,6 @@
 import clsx from "clsx";
 import React from "react";
 import { twMerge } from "tailwind-merge";
-// import classes from "./button.module.css";
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: "text" | "contained" | "outlined";
