@@ -1,10 +1,12 @@
-import classes from "./app.module.css";
+// import classes from "./app.module.css";
 import Button from "./components/Button/Button";
 
 const App: React.FC = () => {
   return (
     <div>
-      <h1 className={classes.h1}>Hello, UI toolkit!</h1>
+      <h1 className="bg-red-500 m-9.5 mx-auto w-40 text-center">
+        Hello, UI toolkit!
+      </h1>
       {/* Button Component */}
       <Button>Default</Button>
       <Button variant="contained" color="primary">
@@ -13,7 +15,11 @@ const App: React.FC = () => {
       <Button variant="contained" color="secondary">
         Contained
       </Button>
-      <Button variant="contained" color="error">
+      <Button
+        variant="contained"
+        color="error"
+        className="This-is-a-custom-class"
+      >
         Contained
       </Button>
       <Button variant="text" color="primary">

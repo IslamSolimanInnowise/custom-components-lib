@@ -27,6 +27,14 @@ const config: webpack.Configuration & DevServerConfiguartion = {
         use: [
           "style-loader",
           { loader: "css-loader", options: { esModule: false } },
+          {
+            loader: "postcss-loader",
+            options: {
+              postcssOptions: {
+                plugins: ["postcss-preset-env"],
+              },
+            },
+          },
         ],
       },
       {
