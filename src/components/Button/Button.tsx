@@ -5,7 +5,6 @@ import { twMerge } from "tailwind-merge";
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: "text" | "contained" | "outlined";
   color?: "primary" | "secondary" | "error";
-  className?: string;
 }
 
 const Button: React.FC<ButtonProps> = ({

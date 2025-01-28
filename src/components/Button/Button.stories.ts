@@ -14,26 +14,50 @@ export const Default: Story = {
   args: { children: "Default" },
 };
 
-export const Contained: Story = {
-  args: { children: "Contained", variant: "contained" },
+export const ContainedPrimary: Story = {
+  args: {
+    children: "Contained Primary",
+    variant: "contained",
+    color: "primary",
+  },
 };
 
-export const Text: Story = {
-  args: { children: "Text", variant: "text" },
+export const ContainedSecondary: Story = {
+  args: {
+    children: "Contained Secondary",
+    variant: "contained",
+    color: "secondary",
+  },
 };
 
-export const Outlined: Story = {
-  args: { children: "Outlined", variant: "outlined" },
+export const ContainedError: Story = {
+  args: { children: "Contained Error", variant: "contained", color: "error" },
 };
 
-export const Primary: Story = {
-  args: { children: "Primary", color: "primary" },
+export const TextPrimary: Story = {
+  args: { children: "Text Primary", variant: "text", color: "primary" },
 };
 
-export const Secondary: Story = {
-  args: { children: "Secondary", color: "secondary" },
+export const TextSecondary: Story = {
+  args: { children: "Text Secondary", variant: "text", color: "secondary" },
 };
 
-export const Error: Story = {
-  args: { children: "Error", color: "error" },
+export const TextError: Story = {
+  args: { children: "Text Error", variant: "text", color: "error" },
+};
+
+export const OutlinedPrimary: Story = {
+  args: { children: "Outlined Primary", variant: "outlined", color: "primary" },
+};
+
+export const OutlinedSecondary: Story = {
+  args: {
+    children: "Outlined Secondary",
+    variant: "outlined",
+    color: "secondary",
+  },
+};
+
+export const OutlinedError: Story = {
+  args: { children: "Outlined Error", variant: "outlined", color: "error" },
 };
