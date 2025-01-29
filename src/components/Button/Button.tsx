@@ -1,4 +1,3 @@
-import clsx from "clsx";
 import React from "react";
 import { twMerge } from "tailwind-merge";
 
@@ -44,7 +43,9 @@ const Button: React.FC<ButtonProps> = ({
     <button
       className={twMerge(
         baseClasses,
-        clsx(variantClasses[variant], colorClasses[color][variant], className)
+        variantClasses[variant],
+        colorClasses[color][variant],
+        className
       )}
       {...props}
     >
