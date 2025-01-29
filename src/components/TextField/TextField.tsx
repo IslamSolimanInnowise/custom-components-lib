@@ -3,13 +3,15 @@ import { twMerge } from "tailwind-merge";
 
 interface TextFieldProps extends React.InputHTMLAttributes<HTMLInputElement> {
   variant?: "filled" | "outlined" | "standard";
-  error?: boolean;
+  error?: string;
+  label?: string;
 }
 
 const TextField: React.FC<TextFieldProps> = ({
   type = "text",
   variant = "standard",
-  error = false,
+  label = "",
+  error = "",
   disabled = false,
   className,
   ...props
@@ -27,17 +29,21 @@ const TextField: React.FC<TextFieldProps> = ({
   };
 
   return (
-    <input
-      type={type}
-      className={twMerge(
-        baseClasses,
-        variantClasses[variant],
-        error && errorClasses,
-        disabled && disabledClasses,
-        className
-      )}
-      {...props}
-    />
+    <div>
+      <input
+        type={type}
+        placeholder={label}
+        className={twMerge(
+          baseClasses,
+          variantClasses[variant],
+          error && errorClasses,
+          disabled && disabledClasses,
+          className
+        )}
+        {...props}
+      />
+      {error && <div className="text-red-700">{error}</div>}
+    </div>
   );
 };
 export default TextField;

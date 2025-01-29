@@ -48,19 +48,27 @@ const App: React.FC = () => {
       <br />
 
       {/* TextField */}
-      <TextField placeholder="default" className="my-custom-class-name" />
+      <TextField label="default" className="my-custom-class-name" />
       <br />
-      <TextField placeholder="standard" variant="standard" />
-      <TextField placeholder="standard error" variant="standard" error />
-      <TextField placeholder="standard disabled" variant="standard" disabled />
+      <TextField label="standard" variant="standard" />
+      <TextField label="standard error" variant="standard" error="404 error" />
+      <TextField label="standard disabled" variant="standard" disabled />
       <br />
-      <TextField placeholder="filled" variant="filled" />
-      <TextField placeholder="filled error" variant="filled" error />
-      <TextField placeholder="filled disabled" variant="filled" disabled />
+      <TextField label="filled" variant="filled" />
+      <TextField
+        label="filled error"
+        variant="filled"
+        error="form submission error"
+      />
+      <TextField label="filled disabled" variant="filled" disabled />
       <br />
-      <TextField placeholder="outlined" variant="outlined" />
-      <TextField placeholder="outlined error" variant="outlined" error />
-      <TextField placeholder="outlined disabled" variant="outlined" disabled />
+      <TextField label="outlined" variant="outlined" />
+      <TextField
+        label="outlined error"
+        variant="outlined"
+        error="unable to fetch"
+      />
+      <TextField label="outlined disabled" variant="outlined" disabled />
     </div>
   );
 };

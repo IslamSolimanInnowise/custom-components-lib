@@ -4,7 +4,7 @@ import TextField from "./TextField";
 
 describe("TextField", () => {
   test("renders TextField with default props", () => {
-    render(<TextField placeholder="placeholder" />);
+    render(<TextField label="placeholder" />);
     const textFieldElement = screen.getByPlaceholderText("placeholder");
     expect(textFieldElement).toBeInTheDocument();
     expect(textFieldElement).toHaveClass("p-2");
@@ -15,15 +15,17 @@ describe("TextField", () => {
   //   Standard variant
   describe("Standard variant", () => {
     test("renders TextField with standard variant", () => {
-      render(<TextField placeholder="placeholder" variant="standard" />);
+      render(<TextField label="placeholder" variant="standard" />);
       const textFieldElement = screen.getByPlaceholderText("placeholder");
       expect(textFieldElement).toBeInTheDocument();
       expect(textFieldElement).toHaveClass("focus:border-b-2");
     });
 
     test("renders TextField with error", () => {
-      render(<TextField placeholder="placeholder" error variant="standard" />);
+      render(<TextField label="placeholder" error="404" variant="standard" />);
       const textFieldElement = screen.getByPlaceholderText("placeholder");
+      const errorElement = screen.getByText("404");
+      expect(errorElement).toBeInTheDocument();
       expect(textFieldElement).toBeInTheDocument();
       expect(textFieldElement).toHaveClass("focus:border-b-2");
       expect(textFieldElement).toHaveClass("text-red-700");
@@ -32,9 +34,7 @@ describe("TextField", () => {
     });
 
     test("renders TextField with disabled", () => {
-      render(
-        <TextField placeholder="placeholder" disabled variant="standard" />
-      );
+      render(<TextField label="placeholder" disabled variant="standard" />);
       const textFieldElement = screen.getByPlaceholderText("placeholder");
       expect(textFieldElement).toBeInTheDocument();
       expect(textFieldElement).toHaveClass("focus:border-b-2");
@@ -46,15 +46,24 @@ describe("TextField", () => {
   //   Filled variant
   describe("Filled variant", () => {
     test("renders TextField with filled variant", () => {
-      render(<TextField placeholder="placeholder" variant="filled" />);
+      render(<TextField label="placeholder" variant="filled" />);
       const textFieldElement = screen.getByPlaceholderText("placeholder");
       expect(textFieldElement).toBeInTheDocument();
       expect(textFieldElement).toHaveClass("bg-gray-300");
     });
 
     test("renders TextField with error", () => {
-      render(<TextField placeholder="placeholder" error variant="filled" />);
+      render(
+        <TextField
+          label="placeholder"
+          error="form submission error"
+          variant="filled"
+        />
+      );
+      const errorElement = screen.getByText("form submission error");
       const textFieldElement = screen.getByPlaceholderText("placeholder");
+
+      expect(errorElement).toBeInTheDocument();
       expect(textFieldElement).toBeInTheDocument();
       expect(textFieldElement).toHaveClass("bg-red-100");
       expect(textFieldElement).toHaveClass("text-red-700");
@@ -63,7 +72,7 @@ describe("TextField", () => {
     });
 
     test("renders TextField with disabled", () => {
-      render(<TextField placeholder="placeholder" disabled variant="filled" />);
+      render(<TextField label="placeholder" disabled variant="filled" />);
       const textFieldElement = screen.getByPlaceholderText("placeholder");
       expect(textFieldElement).toBeInTheDocument();
       expect(textFieldElement).toHaveClass("bg-gray-200");
@@ -74,15 +83,24 @@ describe("TextField", () => {
   //   Outlined variant
   describe("Outlined variant", () => {
     test("renders TextField with outlined variant", () => {
-      render(<TextField placeholder="placeholder" variant="outlined" />);
+      render(<TextField label="placeholder" variant="outlined" />);
       const textFieldElement = screen.getByPlaceholderText("placeholder");
       expect(textFieldElement).toBeInTheDocument();
       expect(textFieldElement).toHaveClass("border-1");
     });
 
     test("renders TextField with error", () => {
-      render(<TextField placeholder="placeholder" error variant="outlined" />);
+      render(
+        <TextField
+          label="placeholder"
+          error="unable to fetch"
+          variant="outlined"
+        />
+      );
+      const errorElement = screen.getByText("unable to fetch");
       const textFieldElement = screen.getByPlaceholderText("placeholder");
+
+      expect(errorElement).toBeInTheDocument();
       expect(textFieldElement).toBeInTheDocument();
       expect(textFieldElement).toHaveClass("border-1");
       expect(textFieldElement).toHaveClass("text-red-700");
@@ -91,9 +109,7 @@ describe("TextField", () => {
     });
 
     test("renders TextField with disabled", () => {
-      render(
-        <TextField placeholder="placeholder" disabled variant="outlined" />
-      );
+      render(<TextField label="placeholder" disabled variant="outlined" />);
       const textFieldElement = screen.getByPlaceholderText("placeholder");
       expect(textFieldElement).toBeInTheDocument();
       expect(textFieldElement).toHaveClass("bg-gray-200");
