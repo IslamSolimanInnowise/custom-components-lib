@@ -1,5 +1,4 @@
 import React from "react";
-import { HTMLInputTypeAttribute } from "react";
 import { twMerge } from "tailwind-merge";
 
 interface TextFieldProps extends React.InputHTMLAttributes<HTMLInputElement> {
