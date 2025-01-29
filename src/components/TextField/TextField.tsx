@@ -42,7 +42,7 @@ const TextField: React.FC<TextFieldProps> = ({
         )}
         {...props}
       />
-      {error && <div className="text-red-700">{error}</div>}
+      {<div className="text-red-700">{error}</div>}
     </div>
   );
 };
