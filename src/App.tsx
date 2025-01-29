@@ -1,4 +1,5 @@
 import Button from "./components/Button/Button";
+import TextField from "./components/TextField/TextField";
 
 const App: React.FC = () => {
   return (
@@ -39,6 +40,17 @@ const App: React.FC = () => {
       <Button variant="outlined" color="error">
         Outlined
       </Button>
+
+      <br />
+      <br />
+
+      {/* TextField */}
+      <TextField
+        placeholder="placeholder"
+        className="my-custom-class-name"
+        error
+        variant="filled"
+      />
     </div>
   );
 };
