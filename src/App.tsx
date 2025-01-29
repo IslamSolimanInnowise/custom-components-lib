@@ -9,6 +9,7 @@ const App: React.FC = () => {
       </h1>
       {/* Button Component */}
       <Button>Default</Button>
+      <br />
       <Button variant="contained" color="primary">
         Contained
       </Button>
@@ -22,6 +23,7 @@ const App: React.FC = () => {
       >
         Contained
       </Button>
+      <br />
       <Button variant="text" color="primary">
         Text
       </Button>
@@ -31,6 +33,7 @@ const App: React.FC = () => {
       <Button variant="text" color="error">
         Text
       </Button>
+      <br />
       <Button variant="outlined" color="primary">
         Outlined
       </Button>
@@ -45,11 +48,19 @@ const App: React.FC = () => {
       <br />
 
       {/* TextField */}
-      <TextField
-        placeholder="placeholder"
-        className="my-custom-class-name"
-        variant="standard"
-      />
+      <TextField placeholder="default" className="my-custom-class-name" />
+      <br />
+      <TextField placeholder="standard" variant="standard" />
+      <TextField placeholder="standard error" variant="standard" error />
+      <TextField placeholder="standard disabled" variant="standard" disabled />
+      <br />
+      <TextField placeholder="filled" variant="filled" />
+      <TextField placeholder="filled error" variant="filled" error />
+      <TextField placeholder="filled disabled" variant="filled" disabled />
+      <br />
+      <TextField placeholder="outlined" variant="outlined" />
+      <TextField placeholder="outlined error" variant="outlined" error />
+      <TextField placeholder="outlined disabled" variant="outlined" disabled />
     </div>
   );
 };
