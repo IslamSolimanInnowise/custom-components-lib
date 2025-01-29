@@ -17,14 +17,14 @@ const TextField: React.FC<TextFieldProps> = ({
   ...props
 }) => {
   const baseClasses =
-    "p-2 border-b-1 rounded-xs text-md placeholder-gray-600 outline-0";
+    "p-2 border-b-1 rounded-xs text-md placeholder-gray-600 outline-0 cursor-pointer hover:bg-amber-100 transition-all duration-200 ease-in-out";
   const errorClasses = "text-red-700 placeholder-red-500 border-red-700";
   const disabledClasses = "bg-gray-200 pointer-events-none";
 
   const variantClasses = {
     standard: "focus:border-b-2",
     filled: "focus:border-b-2 bg-gray-300",
-    outlined: "focus:border-2",
+    outlined: "border-1 focus:border-2",
   };
 
   return (

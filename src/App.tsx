@@ -48,8 +48,7 @@ const App: React.FC = () => {
       <TextField
         placeholder="placeholder"
         className="my-custom-class-name"
-        error
-        variant="filled"
+        variant="standard"
       />
     </div>
   );
