@@ -8,6 +8,8 @@
     "allowJs": true,
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "types": ["jest"],
+    "lib": ["dom", "dom.iterable", "esnext"]
   }
 }
