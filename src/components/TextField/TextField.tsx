@@ -3,10 +3,8 @@ import { HTMLInputTypeAttribute } from "react";
 import { twMerge } from "tailwind-merge";
 
 interface TextFieldProps extends React.InputHTMLAttributes<HTMLInputElement> {
-  type?: HTMLInputTypeAttribute;
   variant?: "filled" | "outlined" | "standard";
   error?: boolean;
-  disabled?: boolean;
 }
 
 const TextField: React.FC<TextFieldProps> = ({
