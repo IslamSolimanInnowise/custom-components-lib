@@ -19,11 +19,11 @@ const TextField: React.FC<TextFieldProps> = ({
     "p-2 border-b-1 rounded-xs text-md placeholder-gray-600 outline-0 cursor-pointer hover:bg-amber-100 transition-all duration-200 ease-in-out m-1";
   const errorClasses =
     "text-red-700 placeholder-red-500 border-red-700 bg-red-100 hover:bg-red-200";
-  const disabledClasses = "bg-gray-300 pointer-events-none";
+  const disabledClasses = "bg-gray-200 pointer-events-none";
 
   const variantClasses = {
     standard: "focus:border-b-2",
-    filled: "focus:border-b-2 bg-gray-200",
+    filled: "focus:border-b-2 bg-gray-300",
     outlined: "border-1 focus:border-2",
   };
 

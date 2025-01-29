@@ -56,7 +56,7 @@ describe("TextField", () => {
       render(<TextField placeholder="placeholder" error variant="filled" />);
       const textFieldElement = screen.getByPlaceholderText("placeholder");
       expect(textFieldElement).toBeInTheDocument();
-      expect(textFieldElement).toHaveClass("bg-gray-300");
+      expect(textFieldElement).toHaveClass("bg-red-100");
       expect(textFieldElement).toHaveClass("text-red-700");
       expect(textFieldElement).toHaveClass("placeholder-red-500");
       expect(textFieldElement).toHaveClass("border-red-700");
