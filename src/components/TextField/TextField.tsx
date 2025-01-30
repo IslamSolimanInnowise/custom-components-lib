@@ -16,7 +16,8 @@ const TextField: React.FC<TextFieldProps> = ({
   className,
   ...props
 }) => {
-  const labelId = props.id || useId();
+  const generatedID = useId();
+  const labelId = props.id || generatedID;
 
   const baseClasses =
     "p-2 border-b-1 rounded-xs text-md placeholder-gray-600 outline-0 cursor-pointer hover:bg-amber-100 transition-all duration-200 ease-in-out";
