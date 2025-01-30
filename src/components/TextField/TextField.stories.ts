@@ -11,38 +11,35 @@ export default meta;
 type Story = StoryObj<typeof TextField>;
 
 export const Default: Story = {
-  args: { label: "Default TextField", type: "number" },
+  args: { label: "Default", type: "number" },
 };
 
 export const StandardTextField: Story = {
   args: {
-    label: "Standard TextField",
+    label: "Standard",
     variant: "standard",
-    type: "text",
   },
 };
 
 export const StandardTextFieldWithError: Story = {
   args: {
-    label: "Standard Error TextField",
+    label: "Standard Error",
     variant: "standard",
-    type: "text",
     error: `404 Error`,
   },
 };
 
 export const StandardTextFieldWithDisabled: Story = {
   args: {
-    label: "Standard Disabled TextField",
+    label: "Standard Disabled",
     variant: "standard",
-    type: "text",
     disabled: true,
   },
 };
 
 export const FilledEmailTextField: Story = {
   args: {
-    label: "Filled Email TextField",
+    label: "Filled",
     variant: "filled",
     type: "email",
   },
@@ -50,7 +47,7 @@ export const FilledEmailTextField: Story = {
 
 export const FilledEmailTextFieldWithError: Story = {
   args: {
-    label: "Filled Email Error",
+    label: "Filled Error",
     variant: "filled",
     type: "email",
     error: `form submission error`,
@@ -59,7 +56,7 @@ export const FilledEmailTextFieldWithError: Story = {
 
 export const FilledEmailTextFieldWithDisabled: Story = {
   args: {
-    label: "Filled Email Disabled",
+    label: "Filled Disabled",
     variant: "filled",
     type: "email",
     disabled: true,
@@ -68,7 +65,7 @@ export const FilledEmailTextFieldWithDisabled: Story = {
 
 export const OutlinedPasswordTextField: Story = {
   args: {
-    label: "Outlined Password TextField",
+    label: "Outlined",
     variant: "outlined",
     type: "password",
   },
@@ -76,7 +73,7 @@ export const OutlinedPasswordTextField: Story = {
 
 export const OutlinedPasswordTextFieldWithError: Story = {
   args: {
-    label: "Outlined Password Error",
+    label: "Outlined Error",
     variant: "outlined",
     type: "password",
     error: `unable to fetch`,
@@ -85,7 +82,7 @@ export const OutlinedPasswordTextFieldWithError: Story = {
 
 export const OutlinedPasswordTextFieldWithDisabled: Story = {
   args: {
-    placeholder: "Outlined Password Disabled",
+    placeholder: "Outlined Disabled",
     variant: "outlined",
     type: "password",
     disabled: true,

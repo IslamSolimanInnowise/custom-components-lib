@@ -68,7 +68,12 @@ const App: React.FC = () => {
         variant="outlined"
         error="unable to fetch"
       />
-      <TextField label="outlined disabled" variant="outlined" disabled />
+      <TextField
+        label="outlined disabled"
+        variant="outlined"
+        disabled
+        id="test-id"
+      />
     </div>
   );
 };

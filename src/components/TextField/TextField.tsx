@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useId } from "react";
 import { twMerge } from "tailwind-merge";
 
 interface TextFieldProps extends React.InputHTMLAttributes<HTMLInputElement> {
@@ -10,12 +10,14 @@ interface TextFieldProps extends React.InputHTMLAttributes<HTMLInputElement> {
 const TextField: React.FC<TextFieldProps> = ({
   type = "text",
   variant = "standard",
-  label = "",
-  error = "",
+  label,
+  error,
   disabled = false,
   className,
   ...props
 }) => {
+  const labelId = props.id || useId();
+
   const baseClasses =
     "p-2 border-b-1 rounded-xs text-md placeholder-gray-600 outline-0 cursor-pointer hover:bg-amber-100 transition-all duration-200 ease-in-out";
   const errorClasses =
@@ -29,10 +31,14 @@ const TextField: React.FC<TextFieldProps> = ({
   };
 
   return (
-    <div>
+    <div className="flex flex-col  items-center gap-1">
+      <label htmlFor={labelId} className="text-lg">
+        {label}
+      </label>
       <input
+        role="textbox"
+        id={labelId}
         type={type}
-        placeholder={label}
         className={twMerge(
           baseClasses,
           variantClasses[variant],
@@ -42,7 +48,7 @@ const TextField: React.FC<TextFieldProps> = ({
         )}
         {...props}
       />
-      {<div className="text-red-700">{error}</div>}
+      <div className="text-red-700">{error}</div>
     </div>
   );
 };
