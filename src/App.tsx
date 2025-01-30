@@ -1,14 +1,18 @@
 import Button from "./components/Button/Button";
+import Select from "./components/Select/Select";
 import TextField from "./components/TextField/TextField";
 
 const App: React.FC = () => {
+  function handleClick() {
+    console.log("Button Clicked");
+  }
   return (
     <div>
       <h1 className="bg-red-500 m-9.5 mx-auto w-40 text-center">
         Hello, UI toolkit!
       </h1>
       {/* Button Component */}
-      <Button>Default</Button>
+      {/* <Button>Default</Button>
       <br />
       <Button variant="contained" color="primary">
         Contained
@@ -42,13 +46,13 @@ const App: React.FC = () => {
       </Button>
       <Button variant="outlined" color="error">
         Outlined
-      </Button>
+      </Button> */}
 
       <br />
       <br />
 
       {/* TextField */}
-      <TextField label="default" className="my-custom-class-name" />
+      {/* <TextField label="default" className="my-custom-class-name" />
       <br />
       <TextField label="standard" variant="standard" />
       <TextField label="standard error" variant="standard" error="404 error" />
@@ -73,7 +77,14 @@ const App: React.FC = () => {
         variant="outlined"
         disabled
         id="test-id"
-      />
+      /> */}
+
+      {/* Select */}
+      <Select className="test" onClick={handleClick}>
+        <option value="1">One</option>
+        <option value="2">Two</option>
+        <option value="3">Three</option>
+      </Select>
     </div>
   );
 };
