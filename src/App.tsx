@@ -1,4 +1,5 @@
 import Button from "./components/Button/Button";
+import TextField from "./components/TextField/TextField";
 
 const App: React.FC = () => {
   return (
@@ -8,6 +9,7 @@ const App: React.FC = () => {
       </h1>
       {/* Button Component */}
       <Button>Default</Button>
+      <br />
       <Button variant="contained" color="primary">
         Contained
       </Button>
@@ -21,6 +23,7 @@ const App: React.FC = () => {
       >
         Contained
       </Button>
+      <br />
       <Button variant="text" color="primary">
         Text
       </Button>
@@ -30,6 +33,7 @@ const App: React.FC = () => {
       <Button variant="text" color="error">
         Text
       </Button>
+      <br />
       <Button variant="outlined" color="primary">
         Outlined
       </Button>
@@ -39,6 +43,37 @@ const App: React.FC = () => {
       <Button variant="outlined" color="error">
         Outlined
       </Button>
+
+      <br />
+      <br />
+
+      {/* TextField */}
+      <TextField label="default" className="my-custom-class-name" />
+      <br />
+      <TextField label="standard" variant="standard" />
+      <TextField label="standard error" variant="standard" error="404 error" />
+      <TextField label="standard disabled" variant="standard" disabled />
+      <br />
+      <TextField label="filled" variant="filled" />
+      <TextField
+        label="filled error"
+        variant="filled"
+        error="form submission error"
+      />
+      <TextField label="filled disabled" variant="filled" disabled />
+      <br />
+      <TextField label="outlined" variant="outlined" />
+      <TextField
+        label="outlined error"
+        variant="outlined"
+        error="unable to fetch"
+      />
+      <TextField
+        label="outlined disabled"
+        variant="outlined"
+        disabled
+        id="test-id"
+      />
     </div>
   );
 };
