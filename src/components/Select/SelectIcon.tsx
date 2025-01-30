@@ -1,3 +1,5 @@
+import React from "react";
+
 const SelectIcon: React.FC = () => {
   return (
     <svg
