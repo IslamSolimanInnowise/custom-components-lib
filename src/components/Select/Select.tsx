@@ -12,15 +12,16 @@ const Select: React.FC<SelectProps> = ({ label, onClick, ...props }) => {
   const id = props.id || generatedID;
 
   return (
-    <div className={twMerge("min-h-14 min-w-30 relative")}>
-      <label htmlFor={id} className="block mb-1 px-2 pt-0.5">
+    <div className="min-h-14 min-w-30 relative">
+      <label htmlFor={id} className="block mb-1 px-1 pt-0.5">
         {label}
       </label>
       <div
         className={twMerge(
-          "absolute -inset-x-0 bottom-2.5 flex justify-end items-center px-2  pointer-events-none h-10  text-2xl transition-all duration-300",
+          "absolute -inset-x-0  flex justify-end items-center px-2  pointer-events-none h-10  text-2xl transition-all duration-300",
           !isOpen && "-rotate-x-180"
         )}
+        role="presentation"
       >
         <SelectIcon />
       </div>
@@ -35,6 +36,7 @@ const Select: React.FC<SelectProps> = ({ label, onClick, ...props }) => {
           setIsOpen(!isOpen);
           onClick?.(e);
         }}
+        role="combobox"
       >
         {props.children}
       </select>

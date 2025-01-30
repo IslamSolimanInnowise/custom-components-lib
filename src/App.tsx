@@ -80,11 +80,7 @@ const App: React.FC = () => {
       /> */}
 
       {/* Select */}
-      <Select className="test" onClick={handleClick}>
-        <option value="1">One</option>
-        <option value="2">Two</option>
-        <option value="3">Three</option>
-      </Select>
+      <Select className="test"></Select>
     </div>
   );
 };
