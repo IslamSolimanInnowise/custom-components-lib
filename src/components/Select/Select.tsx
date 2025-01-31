@@ -3,16 +3,22 @@ import { useId, useState } from "react";
 import { twMerge } from "tailwind-merge";
 import SelectIcon from "./SelectIcon";
 
-interface SelectProps extends React.HTMLAttributes<HTMLSelectElement> {
+type AttributesWithoutOnChange = Omit<
+  React.HTMLAttributes<HTMLSelectElement>,
+  "onChange"
+>;
+
+interface SelectProps extends AttributesWithoutOnChange {
   label?: string;
   options: { id: string; title: string }[];
-  baseValue: string;
+  value: string;
+  onChange: (value: string) => void;
 }
 
 const Select: React.FC<SelectProps> = ({
   label,
   options = [],
-  baseValue = "",
+  value = "",
   onClick,
   onChange,
   ...props
@@ -27,8 +33,7 @@ const Select: React.FC<SelectProps> = ({
   }
 
   function handleChange(e: React.ChangeEvent<HTMLSelectElement>) {
-    console.log(e.target.value);
-    onChange?.(e);
+    onChange(e.target.value);
   }
 
   return (
@@ -55,11 +60,11 @@ const Select: React.FC<SelectProps> = ({
         onClick={handleClick}
         onChange={handleChange}
         role="combobox"
+        value={value}
       >
-        <option value="">{baseValue}</option>
         {options.map((option) => {
           return (
-            <option key={option.id} value={option.title}>
+            <option key={option.id} value={option.id}>
               {option.title}
             </option>
           );
