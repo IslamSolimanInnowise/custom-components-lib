@@ -28,7 +28,7 @@ const Select: React.FC<SelectProps> = ({
   const id = props.id || generatedID;
 
   function handleClick(e: React.MouseEvent<HTMLSelectElement, MouseEvent>) {
-    setIsOpen(!isOpen);
+    setIsOpen((prev) => !prev);
     onClick?.(e);
   }
 

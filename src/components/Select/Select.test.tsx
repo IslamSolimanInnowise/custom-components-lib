@@ -7,7 +7,7 @@ const Wrapper = () => {
   const [selectedValue, setSelectedValue] = useState("1");
 
   const handleSelectChange = (value: string) => {
-    setSelectedValue((_) => value);
+    setSelectedValue(value);
     console.log("Selected ID:", value);
   };
 
