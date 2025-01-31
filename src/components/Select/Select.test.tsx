@@ -1,39 +1,52 @@
-// import "@testing-library/jest-dom";
-// import { render, screen } from "@testing-library/react";
-// import Select from "./Select";
+import "@testing-library/jest-dom";
+import { render, screen } from "@testing-library/react";
+import Select from "./Select";
+import { useState } from "react";
 
-// describe("Select", () => {
-//   test("renders select with default props", () => {
-//     render(<Select></Select>);
-//     const selectElement = screen.getByRole("combobox");
-//     expect(selectElement).toBeInTheDocument();
-//     expect(selectElement).toHaveClass("cursor-pointer");
+const Wrapper = () => {
+  const [selectedValue, setSelectedValue] = useState("1");
 
-//     const arrowDiv = screen.getByRole("presentation");
-//     expect(arrowDiv).toBeInTheDocument();
-//     expect(arrowDiv).toHaveClass("pointer-events-none");
-//   });
+  const handleSelectChange = (value: string) => {
+    setSelectedValue((_) => value);
+    console.log("Selected ID:", value);
+  };
 
-//   describe("when label prop is passed", () => {
-//     test("renders select with label", () => {
-//       render(<Select label="Select"></Select>);
-//       const labelElement = screen.getByText("Select");
-//       expect(labelElement).toBeInTheDocument();
-//     });
-//   });
+  return (
+    <Select
+      label="Select"
+      value={selectedValue}
+      onChange={handleSelectChange}
+      options={[
+        { id: "1", title: "Title 1" },
+        { id: "2", title: "Title 2" },
+      ]}
+    />
+  );
+};
 
-//   describe("when children are passed", () => {
-//     test("renders select with children", () => {
-//       render(
-//         <Select>
-//           <option value="1">Option 1</option>
-//           <option value="2">Option 2</option>
-//         </Select>
-//       );
-//       const option1 = screen.getByText("Option 1");
-//       const option2 = screen.getByText("Option 2");
-//       expect(option1).toBeInTheDocument();
-//       expect(option2).toBeInTheDocument();
-//     });
-//   });
-// });
+describe("Select", () => {
+  test("renders select with default props", () => {
+    render(<Wrapper />);
+
+    const selectElement = screen.getByRole("combobox");
+    expect(selectElement).toBeInTheDocument();
+    expect(selectElement).toHaveClass("cursor-pointer");
+
+    const arrowDiv = screen.getByRole("presentation");
+    expect(arrowDiv).toBeInTheDocument();
+    expect(arrowDiv).toHaveClass("pointer-events-none");
+
+    const option1 = screen.getByText("Title 1");
+    const option2 = screen.getByText("Title 2");
+    expect(option1).toBeInTheDocument();
+    expect(option2).toBeInTheDocument();
+  });
+
+  describe("when label prop is passed", () => {
+    test("renders select with label", () => {
+      render(<Wrapper />);
+      const labelElement = screen.getByText("Select");
+      expect(labelElement).toBeInTheDocument();
+    });
+  });
+});
