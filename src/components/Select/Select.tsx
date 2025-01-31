@@ -5,12 +5,31 @@ import SelectIcon from "./SelectIcon";
 
 interface SelectProps extends React.HTMLAttributes<HTMLSelectElement> {
   label?: string;
+  options: { id: string; title: string }[];
+  baseValue: string;
 }
 
-const Select: React.FC<SelectProps> = ({ label, onClick, ...props }) => {
+const Select: React.FC<SelectProps> = ({
+  label,
+  options = [],
+  baseValue = "",
+  onClick,
+  onChange,
+  ...props
+}) => {
   const [isOpen, setIsOpen] = useState(false);
   const generatedID = useId();
   const id = props.id || generatedID;
+
+  function handleClick(e: React.MouseEvent<HTMLSelectElement, MouseEvent>) {
+    setIsOpen(!isOpen);
+    onClick?.(e);
+  }
+
+  function handleChange(e: React.ChangeEvent<HTMLSelectElement>) {
+    console.log(e.target.value);
+    onChange?.(e);
+  }
 
   return (
     <div className="min-h-14 min-w-30 relative">
@@ -33,13 +52,18 @@ const Select: React.FC<SelectProps> = ({ label, onClick, ...props }) => {
           props.className
         )}
         id={id}
-        onClick={(e) => {
-          setIsOpen(!isOpen);
-          onClick?.(e);
-        }}
+        onClick={handleClick}
+        onChange={handleChange}
         role="combobox"
       >
-        {props.children}
+        <option value="">{baseValue}</option>
+        {options.map((option) => {
+          return (
+            <option key={option.id} value={option.title}>
+              {option.title}
+            </option>
+          );
+        })}
       </select>
     </div>
   );

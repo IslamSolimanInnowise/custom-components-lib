@@ -80,7 +80,16 @@ const App: React.FC = () => {
       /> */}
 
       {/* Select */}
-      <Select className="test"></Select>
+      <Select
+        id="test-id"
+        className="test"
+        baseValue="Please choose an option"
+        onChange={() => console.log("changed")}
+        options={[
+          { id: "1", title: "Option 1" },
+          { id: "2", title: "Option 2" },
+        ]}
+      />
     </div>
   );
 };
