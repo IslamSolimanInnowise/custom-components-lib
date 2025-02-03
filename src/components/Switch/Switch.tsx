@@ -23,6 +23,7 @@ const Switch: React.FC<SwitchProps> = ({
         className
       )}
       onClick={onChange}
+      role="switch"
     ></div>
   );
 };
