@@ -13,6 +13,7 @@ const Checkbox: React.FC<CustomCheckboxProps> = ({
   label,
   labelClassName,
   containerClassName,
+  className,
   ...props
 }) => {
   const generatedId = useId();
@@ -29,7 +30,7 @@ const Checkbox: React.FC<CustomCheckboxProps> = ({
         {...props}
         type="checkbox"
         id={id}
-        className={twMerge(`cursor-pointer w-4 h-4`, props.className)}
+        className={twMerge(`cursor-pointer w-4 h-4`, className)}
         role="checkbox"
       />
       <label htmlFor={id} className={twMerge("font-medium", labelClassName)}>

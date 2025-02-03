@@ -19,7 +19,7 @@ const App: React.FC = () => {
         labelClassName="test-label"
         containerClassName="flex-col-reverse"
       />
-      <Checkbox label="Checkbox 2" />
+      <Checkbox label="Checkbox 2" className="this-is-a-test-checkbox-class" />
     </div>
   );
 };
