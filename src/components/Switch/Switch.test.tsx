@@ -1,14 +1,14 @@
 import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/react";
 import Switch from "./Switch";
-import { useState } from "react";
+import React, { useState } from "react";
 
 const Wrapper = () => {
   const [switchState, setSwitchState] = useState(false);
 
   function handleSwitchChange() {
     setSwitchState((prev) => !prev);
-    console.log("changed");
+    // console.log("changed");
   }
 
   return <Switch checked={switchState} onChange={handleSwitchChange} />;

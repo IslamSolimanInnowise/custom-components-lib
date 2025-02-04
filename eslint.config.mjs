@@ -16,8 +16,19 @@ export default [
       },
     },
   },
-  { plugins: ["react"] },
+  // { plugins: ["react"] },
+  {
+    plugins: {
+      react: pluginReact,
+    },
+  },
   pluginJs.configs.recommended,
   ...tseslint.configs.recommended,
   pluginReact.configs.flat.recommended,
+  {
+    rules: {
+      "no-console": "error",
+      "no-debugger": "error",
+    },
+  },
 ];

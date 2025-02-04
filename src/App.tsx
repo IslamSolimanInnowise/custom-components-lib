@@ -1,8 +1,5 @@
+import React from "react";
 import { useState } from "react";
-import Button from "./components/Button/Button";
-import Select from "./components/Select/Select";
-import TextField from "./components/TextField/TextField";
-import Checkbox from "./components/Checkbox/Checkbox";
 import Switch from "./components/Switch/Switch";
 
 const App: React.FC = () => {
@@ -10,7 +7,7 @@ const App: React.FC = () => {
 
   function handleSwitchChange() {
     setSwitchState((prev) => !prev);
-    console.log("changed");
+    // console.log("changed");
   }
 
   return (

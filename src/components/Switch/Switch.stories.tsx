@@ -40,7 +40,7 @@ export const Controlled: Story = {
 
     function handleSwitchChange() {
       setSwitchState((prev) => !prev);
-      console.log("changed");
+      // console.log("changed");
     }
 
     return <Switch checked={switchState} onChange={handleSwitchChange} />;

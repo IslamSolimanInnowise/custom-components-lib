@@ -1,6 +1,7 @@
 import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/react";
 import Select from "./Select";
+import React from "react";
 import { useState } from "react";
 
 const Wrapper = () => {
@@ -8,7 +9,7 @@ const Wrapper = () => {
 
   const handleSelectChange = (value: string) => {
     setSelectedValue(value);
-    console.log("Selected ID:", value);
+    // console.log("Selected ID:", value);
   };
 
   return (

@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
+    "lint": "eslint",
     "build": "webpack",
     "start": "webpack serve",
     "storybook": "storybook dev -p 6006",
@@ -16,7 +17,6 @@
   "license": "ISC",
   "devDependencies": {
     "@chromatic-com/storybook": "^3.2.4",
-    "@eslint/js": "^9.19.0",
     "@storybook/addon-essentials": "^8.5.2",
     "@storybook/addon-interactions": "^8.5.2",
     "@storybook/addon-onboarding": "^8.5.2",
