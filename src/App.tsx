@@ -27,7 +27,10 @@ const App: React.FC = () => {
       <br />
       <Switch checked />
       <br />
+      <Switch readOnly />
+      <Switch readOnly checked />
       <Switch readOnly disabled />
+      <Switch readOnly checked={switchState} onChange={handleSwitchChange} />
     </div>
   );
 };

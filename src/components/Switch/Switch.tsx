@@ -11,6 +11,7 @@ const Switch: React.FC<SwitchProps> = ({
   disabled,
   switchClassName,
   sliderClassName,
+  readOnly,
   className,
   id,
   ...props
@@ -23,6 +24,7 @@ const Switch: React.FC<SwitchProps> = ({
       htmlFor={componentId}
       className={twMerge(
         "relative inline-block w-15 h-8.5 m-0.5 cursor-pointer",
+        readOnly && "pointer-events-none",
         disabled && "pointer-events-none opacity-50",
         switchClassName
       )}

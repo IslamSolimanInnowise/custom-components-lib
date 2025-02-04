@@ -1,17 +1,24 @@
 import "@testing-library/jest-dom";
-import { render, screen } from "@testing-library/react";
+import { act, render, screen } from "@testing-library/react";
 import Switch from "./Switch";
 import React, { useState } from "react";
 
-const Wrapper = () => {
+const Wrapper: React.FC<{ readOnly?: boolean }> = ({ readOnly }) => {
   const [switchState, setSwitchState] = useState(false);
 
   function handleSwitchChange() {
-    setSwitchState((prev) => !prev);
-    // console.log("changed");
+    act(() => {
+      setSwitchState((prev) => !prev);
+    });
   }
 
-  return <Switch checked={switchState} onChange={handleSwitchChange} />;
+  return (
+    <Switch
+      readOnly={readOnly}
+      checked={switchState}
+      onChange={handleSwitchChange}
+    />
+  );
 };
 
 describe("Switch", () => {
@@ -40,6 +47,13 @@ describe("Switch", () => {
   test("renders Switch with disabled prop", () => {
     render(<Switch disabled />);
     const switchElement = screen.getByTestId("switch");
+    expect(switchElement).toHaveClass("pointer-events-none");
+  });
+
+  test("renders Switch with readonly prop", () => {
+    render(<Wrapper readOnly />);
+    const switchElement = screen.getByTestId("switch");
+    expect(switchElement).toBeInTheDocument();
     expect(switchElement).toHaveClass("pointer-events-none");
   });
 
