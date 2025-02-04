@@ -1,31 +1,58 @@
-import React from "react";
+import React, { useId } from "react";
 import { twMerge } from "tailwind-merge";
 
 interface SwitchProps {
   checked?: boolean;
   disabled?: boolean;
-  className?: string;
+  switchClassName?: string;
+  sliderClassName?: string;
+  id?: string;
   onChange?: () => void;
 }
 
 const Switch: React.FC<SwitchProps> = ({
   checked = false,
   disabled = false,
-  className,
+  switchClassName,
+  sliderClassName,
+  id,
   onChange,
 }) => {
+  const generatedID = useId();
+  const componentId = generatedID || id;
+
+  function handleChange() {
+    if (onChange !== undefined) {
+      onChange();
+    }
+  }
+
   return (
-    <div
+    <label
+      htmlFor={componentId}
       className={twMerge(
-        "h-5 bg-gray-300 w-10 rounded-2xl relative cursor-pointer transition-all duration-300 ease-in-out before:content-[''] before:absolute before:top-0.5 before:left-0.5 before:h-4 before:w-4 before:bg-white before:rounded-full before:transition-all before:duration-300 before:ease-in-out before:z-0",
-        checked &&
-          "bg-blue-600 before:translate-x-5 before:shadow-[0_3px_1px_-2px_rgba(0,0,0,0.2),0_2px_2px_0px_rgba(0,0,0,0.14),0_1px_5px_0px_rgba(0,0,0,0.12)]",
+        "relative inline-block w-15 h-8.5 m-0.5",
         disabled && "pointer-events-none opacity-50",
-        className
+        switchClassName
       )}
-      onClick={onChange}
-      role="switch"
-    ></div>
+    >
+      <input
+        type="checkbox"
+        id={componentId}
+        checked={checked}
+        disabled={disabled}
+        onChange={handleChange}
+        className="opacity-0 w-0 h-0"
+      />
+      <span
+        className={twMerge(
+          "absolute cursor-pointer inset-0 bg-gray-400 transition-all duration-400 rounded-3xl before:absolute before:content-[''] before:h-6.5 before:w-6.5 before:left-1 before:bottom-1 before:bg-white  before:transition-all before:duration-400 before:rounded-full",
+          checked &&
+            "bg-blue-400 shadow-[0_3px_1px_-2px_rgba(0,0,0,0.2),0_2px_2px_0px_rgba(0,0,0,0.14),0_1px_5px_0px_rgba(0,0,0,0.12)] before:translate-x-6.5",
+          sliderClassName
+        )}
+      ></span>
+    </label>
   );
 };
 export default Switch;

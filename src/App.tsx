@@ -7,7 +7,7 @@ const App: React.FC = () => {
 
   function handleSwitchChange() {
     setSwitchState((prev) => !prev);
-    // console.log("changed");
+    console.log("changed");
   }
 
   return (
@@ -18,7 +18,7 @@ const App: React.FC = () => {
 
       <br />
 
-      <Switch className="my-custom-class" />
+      <Switch />
       <br />
       <Switch checked={switchState} onChange={handleSwitchChange} />
       <br />
