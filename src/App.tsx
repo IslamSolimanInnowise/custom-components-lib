@@ -26,6 +26,8 @@ const App: React.FC = () => {
       <Switch disabled checked />
       <br />
       <Switch checked />
+      <br />
+      <Switch readOnly disabled />
     </div>
   );
 };

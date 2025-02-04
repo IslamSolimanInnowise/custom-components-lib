@@ -7,8 +7,8 @@ interface SwitchProps extends React.InputHTMLAttributes<HTMLInputElement> {
 }
 
 const Switch: React.FC<SwitchProps> = ({
-  checked = false,
-  disabled = false,
+  checked,
+  disabled,
   switchClassName,
   sliderClassName,
   className,
@@ -32,10 +32,9 @@ const Switch: React.FC<SwitchProps> = ({
         {...props}
         type="checkbox"
         id={componentId}
-        checked={checked}
         disabled={disabled}
         className={twMerge("opacity-0 w-0 h-0", className)}
-        readOnly
+        defaultChecked
         data-testid="input"
       />
       <span
