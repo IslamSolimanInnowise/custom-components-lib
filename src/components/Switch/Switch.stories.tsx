@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import { Meta, StoryObj } from "@storybook/react";
 import Switch from "./Switch";
 
@@ -32,26 +31,4 @@ export const DisabledChecked: Story = {
     disabled: true,
     checked: true,
   },
-};
-
-export const Controlled: Story = {
-  render: () => {
-    const [switchState, setSwitchState] = useState(false);
-
-    function handleSwitchChange() {
-      setSwitchState((prev) => !prev);
-    }
-
-    return <Switch checked={switchState} onChange={handleSwitchChange} />;
-  },
-};
-
-export const ControlledFuncApproach = () => {
-  const [checked, setChecked] = useState(false);
-
-  function handleSwitchChange() {
-    setChecked((prev) => !prev);
-  }
-
-  return <Switch checked={checked} onChange={handleSwitchChange} />;
 };

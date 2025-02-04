@@ -1,13 +1,9 @@
 import React, { useId } from "react";
 import { twMerge } from "tailwind-merge";
 
-interface SwitchProps {
-  checked?: boolean;
-  disabled?: boolean;
+interface SwitchProps extends React.InputHTMLAttributes<HTMLInputElement> {
   switchClassName?: string;
   sliderClassName?: string;
-  id?: string;
-  onChange?: () => void;
 }
 
 const Switch: React.FC<SwitchProps> = ({
@@ -15,17 +11,12 @@ const Switch: React.FC<SwitchProps> = ({
   disabled = false,
   switchClassName,
   sliderClassName,
+  className,
   id,
-  onChange,
+  ...props
 }) => {
   const generatedID = useId();
   const componentId = generatedID || id;
-
-  function handleChange() {
-    if (onChange !== undefined) {
-      onChange();
-    }
-  }
 
   return (
     <label
@@ -38,12 +29,13 @@ const Switch: React.FC<SwitchProps> = ({
       data-testid="switch"
     >
       <input
+        {...props}
         type="checkbox"
         id={componentId}
         checked={checked}
         disabled={disabled}
-        onChange={handleChange}
-        className="opacity-0 w-0 h-0"
+        className={twMerge("opacity-0 w-0 h-0", className)}
+        readOnly
         data-testid="input"
       />
       <span

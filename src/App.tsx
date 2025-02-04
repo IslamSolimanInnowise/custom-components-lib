@@ -7,7 +7,6 @@ const App: React.FC = () => {
 
   function handleSwitchChange() {
     setSwitchState((prev) => !prev);
-    // console.log("changed");
   }
 
   return (
