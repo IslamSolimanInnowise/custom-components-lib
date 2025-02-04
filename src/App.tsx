@@ -7,7 +7,7 @@ const App: React.FC = () => {
 
   function handleSwitchChange() {
     setSwitchState((prev) => !prev);
-    console.log("changed");
+    // console.log("changed");
   }
 
   return (
@@ -25,6 +25,8 @@ const App: React.FC = () => {
       <Switch disabled />
       <br />
       <Switch disabled checked />
+      <br />
+      <Switch checked />
     </div>
   );
 };
