@@ -40,9 +40,18 @@ export const Controlled: Story = {
 
     function handleSwitchChange() {
       setSwitchState((prev) => !prev);
-      // console.log("changed");
     }
 
     return <Switch checked={switchState} onChange={handleSwitchChange} />;
   },
+};
+
+export const ControlledFuncApproach = () => {
+  const [checked, setChecked] = useState(false);
+
+  function handleSwitchChange() {
+    setChecked((prev) => !prev);
+  }
+
+  return <Switch checked={checked} onChange={handleSwitchChange} />;
 };
