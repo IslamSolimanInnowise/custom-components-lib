@@ -46,7 +46,7 @@ const Select: React.FC<SelectProps> = ({
           "absolute -inset-x-0  flex justify-end items-center px-2  pointer-events-none h-10  text-2xl transition-all duration-300",
           !isOpen && "-rotate-x-180"
         )}
-        role="presentation"
+        data-testid="presentation"
       >
         <SelectIcon />
       </div>
@@ -59,7 +59,7 @@ const Select: React.FC<SelectProps> = ({
         id={id}
         onClick={handleClick}
         onChange={handleChange}
-        role="combobox"
+        data-testid="combobox"
         value={value}
       >
         {options.map((option) => {
