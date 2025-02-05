@@ -45,7 +45,7 @@ const TextField: React.FC<TextFieldProps> = ({
           variantClasses[variant],
           error && errorClasses,
           disabled && disabledClasses,
-          className
+          className,
         )}
         {...props}
       />

@@ -33,7 +33,7 @@ describe("TextField", () => {
 
     test("renders standard TextField with error", () => {
       render(
-        <TextField label="standard error" error="404" variant="standard" />
+        <TextField label="standard error" error="404" variant="standard" />,
       );
 
       const labelElement = screen.getByText("standard error");
@@ -54,7 +54,7 @@ describe("TextField", () => {
 
     test("renders standard TextField with disabled", () => {
       render(
-        <TextField label="standard disabled" disabled variant="standard" />
+        <TextField label="standard disabled" disabled variant="standard" />,
       );
 
       const labelElement = screen.getByText("standard disabled");
@@ -89,7 +89,7 @@ describe("TextField", () => {
           label="filled error"
           error="form submission error"
           variant="filled"
-        />
+        />,
       );
 
       const labelElement = screen.getByText("filled error");
@@ -142,7 +142,7 @@ describe("TextField", () => {
           label="outlined error"
           error="unable to fetch"
           variant="outlined"
-        />
+        />,
       );
 
       const labelElement = screen.getByText("outlined error");
@@ -163,7 +163,7 @@ describe("TextField", () => {
 
     test("renders outlined TextField with disabled", () => {
       render(
-        <TextField label="outlined disabled" disabled variant="outlined" />
+        <TextField label="outlined disabled" disabled variant="outlined" />,
       );
 
       const labelElement = screen.getByText("outlined disabled");

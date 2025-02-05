@@ -18,7 +18,7 @@ describe("Button", () => {
       render(
         <Button variant="contained" color="primary">
           Contained
-        </Button>
+        </Button>,
       );
       const buttonElement = screen.getByText("Contained");
       expect(buttonElement).toBeInTheDocument();
@@ -30,7 +30,7 @@ describe("Button", () => {
       render(
         <Button variant="contained" color="secondary">
           Contained
-        </Button>
+        </Button>,
       );
       const buttonElement = screen.getByText("Contained");
       expect(buttonElement).toBeInTheDocument();
@@ -42,7 +42,7 @@ describe("Button", () => {
       render(
         <Button variant="contained" color="error">
           Contained
-        </Button>
+        </Button>,
       );
       const buttonElement = screen.getByText("Contained");
       expect(buttonElement).toBeInTheDocument();
@@ -57,7 +57,7 @@ describe("Button", () => {
       render(
         <Button variant="text" color="primary">
           Text
-        </Button>
+        </Button>,
       );
       const buttonElement = screen.getByText("Text");
       expect(buttonElement).toBeInTheDocument();
@@ -69,7 +69,7 @@ describe("Button", () => {
       render(
         <Button variant="text" color="secondary">
           Text
-        </Button>
+        </Button>,
       );
       const buttonElement = screen.getByText("Text");
       expect(buttonElement).toBeInTheDocument();
@@ -81,7 +81,7 @@ describe("Button", () => {
       render(
         <Button variant="text" color="error">
           Text
-        </Button>
+        </Button>,
       );
       const buttonElement = screen.getByText("Text");
       expect(buttonElement).toBeInTheDocument();
@@ -96,7 +96,7 @@ describe("Button", () => {
       render(
         <Button variant="outlined" color="primary">
           Outlined
-        </Button>
+        </Button>,
       );
       const buttonElement = screen.getByText("Outlined");
       expect(buttonElement).toBeInTheDocument();
@@ -108,7 +108,7 @@ describe("Button", () => {
       render(
         <Button variant="outlined" color="secondary">
           Outlined
-        </Button>
+        </Button>,
       );
       const buttonElement = screen.getByText("Outlined");
       expect(buttonElement).toBeInTheDocument();
@@ -120,7 +120,7 @@ describe("Button", () => {
       render(
         <Button variant="outlined" color="error">
           Outlined
-        </Button>
+        </Button>,
       );
       const buttonElement = screen.getByText("Outlined");
       expect(buttonElement).toBeInTheDocument();

@@ -23,7 +23,7 @@ const Checkbox: React.FC<CustomCheckboxProps> = ({
     <div
       className={twMerge(
         "flex gap-3 items-center justify-between w-fit py-2 px-3",
-        containerClassName
+        containerClassName,
       )}
     >
       <input

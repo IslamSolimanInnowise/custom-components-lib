@@ -45,7 +45,7 @@ const Button: React.FC<ButtonProps> = ({
         baseClasses,
         variantClasses[variant],
         colorClasses[color][variant],
-        className
+        className,
       )}
       {...props}
     >

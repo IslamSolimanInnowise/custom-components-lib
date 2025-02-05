@@ -3,7 +3,6 @@ import "../src/index.css";
 
 import { withThemeByDataAttribute } from "@storybook/addon-themes";
 
-
 const preview: Preview = {
   parameters: {
     controls: {

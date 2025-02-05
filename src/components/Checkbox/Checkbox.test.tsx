@@ -23,7 +23,7 @@ describe("Checkbox", () => {
         labelClassName="custom-label"
         className="custom-checkbox"
         containerClassName="custom-container"
-      />
+      />,
     );
 
     const checkboxElement = screen.getByTestId("checkbox");
