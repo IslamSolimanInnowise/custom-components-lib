@@ -29,7 +29,7 @@ describe("Switch", () => {
     expect(switchElement).toBeInTheDocument();
     expect(switchElement).toHaveClass("cursor-pointer");
 
-    const input = screen.getByTestId("input");
+    const input = screen.getByTestId("switch-input");
     expect(input).toBeInTheDocument();
     expect(input).toHaveClass("opacity-0");
 
@@ -63,7 +63,7 @@ describe("Switch", () => {
     const switchElement = screen.getByTestId("switch");
     expect(switchElement).toBeInTheDocument();
 
-    const input = screen.getByTestId("input");
+    const input = screen.getByTestId("switch-input");
     expect(input).toBeInTheDocument();
     expect(input).toHaveClass("opacity-0");
 
