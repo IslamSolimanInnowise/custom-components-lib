@@ -10,7 +10,6 @@ interface ModalProps extends React.DialogHTMLAttributes<HTMLDialogElement> {
 const Modal: React.FC<ModalProps> = ({
   onClose,
   onClick,
-
   modalClassName,
   modalContentClassName,
   closeClassName,
