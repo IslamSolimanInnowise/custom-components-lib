@@ -9,26 +9,29 @@ interface ModalProps extends React.DialogHTMLAttributes<HTMLDialogElement> {
 const Modal: React.FC<ModalProps> = ({
   onClose,
   onClick,
+  children,
   className,
   modalContentClassName,
   closeClassName,
   ...props
 }) => {
-  function handleClosingModal(
+  const handleClosingModal = (
     e?: React.SyntheticEvent<HTMLDialogElement, Event>
-  ) {
+  ) => {
     onClose?.(e);
-  }
+  };
 
-  function handleClickingOutsideContent(
+  const handleClickingOutsideContent = (
     e: React.MouseEvent<HTMLDialogElement, MouseEvent>
-  ) {
+  ) => {
     if (e.currentTarget === e.target) {
       handleClosingModal();
     }
 
     onClick?.(e);
-  }
+  };
+
+  const handleClickOnSpan = () => handleClosingModal();
 
   return (
     <dialog
@@ -53,12 +56,12 @@ const Modal: React.FC<ModalProps> = ({
             "mb-1 absolute top-2 right-2 bg-white border-1 size-7 rounded-full flex items-center justify-center cursor-pointer font-extrabold transition-all duration-200 hover:bg-black hover:text-white hover:border-white",
             closeClassName
           )}
-          onClick={() => handleClosingModal()}
+          onClick={handleClickOnSpan}
           data-testid="modal-close-button"
         >
           X
         </span>
-        {props.children}
+        {children}
       </div>
     </dialog>
   );
