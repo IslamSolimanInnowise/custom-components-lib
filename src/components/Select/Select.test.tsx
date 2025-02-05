@@ -1,8 +1,7 @@
 import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/react";
 import Select from "./Select";
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 
 const Wrapper = () => {
   const [selectedValue, setSelectedValue] = useState("1");

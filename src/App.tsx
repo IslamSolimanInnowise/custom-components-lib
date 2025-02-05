@@ -1,12 +1,17 @@
 import React from "react";
 import { useState } from "react";
-import Switch from "./components/Switch/Switch";
+import Modal from "./components/Modal/Modal";
+import Button from "./components/Button/Button";
 
 const App: React.FC = () => {
-  const [switchState, setSwitchState] = useState(false);
+  const [openModal, setOpenModal] = useState(false);
 
-  function handleSwitchChange() {
-    setSwitchState((prev) => !prev);
+  function handleSwitchingModal() {
+    // if (openModal) {
+    //   console.log("closed");
+    // }
+
+    setOpenModal((prev) => !prev);
   }
 
   return (
@@ -17,20 +22,18 @@ const App: React.FC = () => {
 
       <br />
 
-      <Switch />
-      <br />
-      <Switch checked={switchState} onChange={handleSwitchChange} />
-      <br />
-      <Switch disabled />
-      <br />
-      <Switch disabled checked />
-      <br />
-      <Switch checked />
-      <br />
-      <Switch readOnly />
-      <Switch readOnly checked />
-      <Switch readOnly disabled />
-      <Switch readOnly checked={switchState} onChange={handleSwitchChange} />
+      {/* <button>Open The Modal</button> */}
+      <Button onClick={handleSwitchingModal}>Open The Modal</Button>
+      <Modal open={openModal} onClose={handleSwitchingModal}>
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut, et!
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit
+          assumenda magnam ratione! Provident accusantium recusandae asperiores
+          mollitia maiores distinctio consectetur!
+        </p>
+      </Modal>
     </div>
   );
 };
