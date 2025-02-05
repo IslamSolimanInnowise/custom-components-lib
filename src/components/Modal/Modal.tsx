@@ -2,7 +2,6 @@ import React from "react";
 import { twMerge } from "tailwind-merge";
 
 interface ModalProps extends React.DialogHTMLAttributes<HTMLDialogElement> {
-  modalClassName?: string;
   modalContentClassName?: string;
   closeClassName?: string;
 }
@@ -10,7 +9,7 @@ interface ModalProps extends React.DialogHTMLAttributes<HTMLDialogElement> {
 const Modal: React.FC<ModalProps> = ({
   onClose,
   onClick,
-  modalClassName,
+  className,
   modalContentClassName,
   closeClassName,
   ...props
@@ -37,7 +36,7 @@ const Modal: React.FC<ModalProps> = ({
       onClose={handleClosingModal}
       className={twMerge(
         "w-screen min-h-screen bg-[#00000080] absolute top-0",
-        modalClassName
+        className
       )}
       onClick={handleClickingOutsideContent}
       data-testid="modal"

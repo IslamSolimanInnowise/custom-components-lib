@@ -26,7 +26,7 @@ export const Default: Story = {
 export const CustomStyled: Story = {
   args: {
     open: true,
-    modalClassName: "bg-blue-500 bg-opacity-80",
+    className: "bg-blue-500 bg-opacity-80",
     modalContentClassName: "bg-white rounded-lg p-6 shadow-lg h-40",
     closeClassName: "text-red-500 hover:text-red-700",
     children: (
