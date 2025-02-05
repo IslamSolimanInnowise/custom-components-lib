@@ -9,7 +9,6 @@ const Wrapper = () => {
 
   const handleSelectChange = (value: string) => {
     setSelectedValue(value);
-    // console.log("Selected ID:", value);
   };
 
   return (
@@ -29,11 +28,11 @@ describe("Select", () => {
   test("renders select with default props", () => {
     render(<Wrapper />);
 
-    const selectElement = screen.getByRole("combobox");
+    const selectElement = screen.getByTestId("combobox");
     expect(selectElement).toBeInTheDocument();
     expect(selectElement).toHaveClass("cursor-pointer");
 
-    const arrowDiv = screen.getByRole("presentation");
+    const arrowDiv = screen.getByTestId("presentation");
     expect(arrowDiv).toBeInTheDocument();
     expect(arrowDiv).toHaveClass("pointer-events-none");
 

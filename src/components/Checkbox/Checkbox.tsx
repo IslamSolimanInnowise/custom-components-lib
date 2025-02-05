@@ -31,7 +31,7 @@ const Checkbox: React.FC<CustomCheckboxProps> = ({
         type="checkbox"
         id={id}
         className={twMerge(`cursor-pointer w-4 h-4`, className)}
-        role="checkbox"
+        data-testid="checkbox"
       />
       <label htmlFor={id} className={twMerge("font-medium", labelClassName)}>
         {label}

@@ -11,7 +11,7 @@ describe("TextField", () => {
     expect(labelElement).toBeInTheDocument();
     expect(labelElement).toHaveClass("text-lg");
 
-    const textFieldElement = screen.getByRole("textbox");
+    const textFieldElement = screen.getByTestId("textbox");
     expect(textFieldElement).toHaveClass("p-2");
     expect(textFieldElement).toHaveClass("focus:border-b-2");
     expect(textFieldElement).toHaveAttribute("type", "text");
@@ -26,7 +26,7 @@ describe("TextField", () => {
       expect(labelElement).toBeInTheDocument();
       expect(labelElement).toHaveClass("text-lg");
 
-      const textFieldElement = screen.getByRole("textbox");
+      const textFieldElement = screen.getByTestId("textbox");
       expect(textFieldElement).toBeInTheDocument();
       expect(textFieldElement).toHaveClass("focus:border-b-2");
     });
@@ -40,7 +40,7 @@ describe("TextField", () => {
       expect(labelElement).toBeInTheDocument();
       expect(labelElement).toHaveClass("text-lg");
 
-      const textFieldElement = screen.getByRole("textbox");
+      const textFieldElement = screen.getByTestId("textbox");
       expect(textFieldElement).toBeInTheDocument();
       expect(textFieldElement).toHaveClass("focus:border-b-2");
       expect(textFieldElement).toHaveClass("text-red-700");
@@ -61,7 +61,7 @@ describe("TextField", () => {
       expect(labelElement).toBeInTheDocument();
       expect(labelElement).toHaveClass("text-lg");
 
-      const textFieldElement = screen.getByRole("textbox");
+      const textFieldElement = screen.getByTestId("textbox");
       expect(textFieldElement).toBeInTheDocument();
       expect(textFieldElement).toHaveClass("focus:border-b-2");
       expect(textFieldElement).toHaveClass("bg-gray-200");
@@ -78,7 +78,7 @@ describe("TextField", () => {
       expect(labelElement).toBeInTheDocument();
       expect(labelElement).toHaveClass("text-lg");
 
-      const textFieldElement = screen.getByRole("textbox");
+      const textFieldElement = screen.getByTestId("textbox");
       expect(textFieldElement).toBeInTheDocument();
       expect(textFieldElement).toHaveClass("bg-gray-300");
     });
@@ -96,7 +96,7 @@ describe("TextField", () => {
       expect(labelElement).toBeInTheDocument();
       expect(labelElement).toHaveClass("text-lg");
 
-      const textFieldElement = screen.getByRole("textbox");
+      const textFieldElement = screen.getByTestId("textbox");
       expect(textFieldElement).toBeInTheDocument();
       expect(textFieldElement).toHaveClass("bg-red-100");
       expect(textFieldElement).toHaveClass("text-red-700");
@@ -115,7 +115,7 @@ describe("TextField", () => {
       expect(labelElement).toBeInTheDocument();
       expect(labelElement).toHaveClass("text-lg");
 
-      const textFieldElement = screen.getByRole("textbox");
+      const textFieldElement = screen.getByTestId("textbox");
       expect(textFieldElement).toBeInTheDocument();
       expect(textFieldElement).toHaveClass("bg-gray-200");
       expect(textFieldElement).toHaveClass("pointer-events-none");
@@ -131,7 +131,7 @@ describe("TextField", () => {
       expect(labelElement).toBeInTheDocument();
       expect(labelElement).toHaveClass("text-lg");
 
-      const textFieldElement = screen.getByRole("textbox");
+      const textFieldElement = screen.getByTestId("textbox");
       expect(textFieldElement).toBeInTheDocument();
       expect(textFieldElement).toHaveClass("border-1");
     });
@@ -149,7 +149,7 @@ describe("TextField", () => {
       expect(labelElement).toBeInTheDocument();
       expect(labelElement).toHaveClass("text-lg");
 
-      const textFieldElement = screen.getByRole("textbox");
+      const textFieldElement = screen.getByTestId("textbox");
       expect(textFieldElement).toBeInTheDocument();
       expect(textFieldElement).toHaveClass("border-1");
       expect(textFieldElement).toHaveClass("text-red-700");
@@ -170,7 +170,7 @@ describe("TextField", () => {
       expect(labelElement).toBeInTheDocument();
       expect(labelElement).toHaveClass("text-lg");
 
-      const textFieldElement = screen.getByRole("textbox");
+      const textFieldElement = screen.getByTestId("textbox");
       expect(textFieldElement).toBeInTheDocument();
       expect(textFieldElement).toHaveClass("bg-gray-200");
       expect(textFieldElement).toHaveClass("pointer-events-none");
