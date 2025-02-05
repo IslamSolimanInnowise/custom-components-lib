@@ -10,6 +10,7 @@ interface ModalProps extends React.DialogHTMLAttributes<HTMLDialogElement> {
 const Modal: React.FC<ModalProps> = ({
   onClose,
   onClick,
+
   modalClassName,
   modalContentClassName,
   closeClassName,
@@ -40,12 +41,14 @@ const Modal: React.FC<ModalProps> = ({
         modalClassName
       )}
       onClick={handleClickingOutsideContent}
+      data-testid="modal"
     >
       <div
         className={twMerge(
           "size-[80%] bg-gray-300 rounded-2xl absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 p-1 pt-10 overflow-auto",
           modalContentClassName
         )}
+        data-testid="modal-content"
       >
         <span
           className={twMerge(
@@ -53,6 +56,7 @@ const Modal: React.FC<ModalProps> = ({
             closeClassName
           )}
           onClick={() => handleClosingModal()}
+          data-testid="modal-close-button"
         >
           X
         </span>
