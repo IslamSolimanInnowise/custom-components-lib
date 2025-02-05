@@ -7,8 +7,11 @@ const App: React.FC = () => {
   const [openModal, setOpenModal] = useState(false);
 
   function handleSwitchingModal() {
+    // if (openModal) {
+    //   console.log("closed");
+    // }
+
     setOpenModal((prev) => !prev);
-    // console.log(openModal);
   }
 
   return (
