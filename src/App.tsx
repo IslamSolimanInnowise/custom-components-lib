@@ -1,6 +1,6 @@
-import React from "react";
+// import React from "react";
 
-const App: React.FC = () => {
-  return <h1>Awesome Components</h1>;
-};
-export default App;
+// const App: React.FC = () => {
+//   return <h1>custom-components-lib</h1>;
+// };
+// export default App;

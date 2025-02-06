@@ -10,6 +10,9 @@
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "types": ["jest"],
-    "lib": ["dom", "dom.iterable", "esnext"]
-  }
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "declaration": true
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "dist"]
 }

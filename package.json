@@ -1,8 +1,8 @@
 {
-  "name": "custom-components-lib",
+  "name": "islam-soliman-innowise-custom-components-lib",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "./dist/bundle.js",
   "scripts": {
     "test": "jest",
     "lint": "eslint",
@@ -10,7 +10,8 @@
     "start": "webpack serve",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "tailwind:init": "tailwindcss init -p"
+    "tailwind:init": "tailwindcss init -p",
+    "pub": "webpack && npm version patch && npm publish"
   },
   "keywords": [],
   "author": "",
@@ -72,9 +73,16 @@
     "react-dom": "^19.0.0",
     "tailwind-merge": "^2.6.0"
   },
+  "peerDependencies": {
+    "react": "*",
+    "react-dom": "*"
+  },
   "eslintConfig": {
     "extends": [
       "plugin:storybook/recommended"
     ]
-  }
+  },
+  "files": [
+    "dist"
+  ]
 }

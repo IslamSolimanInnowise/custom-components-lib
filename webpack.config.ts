@@ -10,7 +10,7 @@ const config: webpack.Configuration & DevServerConfiguartion = {
   entry: path.resolve(__dirname, "src", "index.tsx"),
   output: {
     path: path.resolve(__dirname, "dist"),
-    filename: "[contenthash].bundle.js",
+    filename: "bundle.js",
     clean: true,
   },
 
@@ -48,6 +48,10 @@ const config: webpack.Configuration & DevServerConfiguartion = {
   resolve: {
     extensions: [".tsx", ".ts", ".js"],
   },
+
+  // externals: {
+  //   react: "react",
+  // },
 };
 
 export default config;
