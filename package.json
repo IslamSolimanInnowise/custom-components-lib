@@ -2,7 +2,11 @@
   "name": "islam-soliman-innowise-custom-components-lib",
   "version": "1.0.0",
   "description": "",
-  "main": "./dist/bundle.js",
+  "main": "dist/bundle.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "test": "jest",
     "lint": "eslint",
@@ -81,8 +85,5 @@
     "extends": [
       "plugin:storybook/recommended"
     ]
-  },
-  "files": [
-    "dist"
-  ]
+  }
 }

@@ -4,13 +4,17 @@ import webpack from "webpack";
 import { Configuration as DevServerConfiguartion } from "webpack-dev-server";
 
 const config: webpack.Configuration & DevServerConfiguartion = {
-  mode: "development",
+  mode: "production",
   devServer: { port: 3000, open: true, hot: true },
 
-  entry: path.resolve(__dirname, "src", "index.tsx"),
+  entry: path.resolve(__dirname, "src", "index.ts"),
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "bundle.js",
+    library: "islam-soliman-innowise-custom-components-lib",
+    libraryTarget: "umd",
+    umdNamedDefine: true,
+    globalObject: "this",
     clean: true,
   },
 
@@ -49,9 +53,20 @@ const config: webpack.Configuration & DevServerConfiguartion = {
     extensions: [".tsx", ".ts", ".js"],
   },
 
-  // externals: {
-  //   react: "react",
-  // },
+  externals: {
+    react: {
+      commonjs: "react",
+      commonjs2: "react",
+      amd: "react",
+      root: "React",
+    },
+    "react-dom": {
+      commonjs: "react-dom",
+      commonjs2: "react-dom",
+      amd: "react-dom",
+      root: "ReactDOM",
+    },
+  },
 };
 
 export default config;
